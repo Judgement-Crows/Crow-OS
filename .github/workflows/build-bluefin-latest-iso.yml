@@ -4,7 +4,7 @@ on:
 
 jobs:
   build-latest:
-    name: Crow-OS
+    name: crow-os
     uses: ./.github/workflows/reusable-build-iso.yml
     secrets: inherit
     with:
