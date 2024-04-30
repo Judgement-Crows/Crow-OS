@@ -126,7 +126,7 @@ jobs:
           arch: x86_64
           image_name: ${{ env.IMAGE_NAME }}
           image_repo: ghcr.io/ublue-os
-          variant: ${{ env.VARIANT }}
+          variant: latest
           version: ${{ matrix.fedora_version }}
           image_tag: ${{ steps.generate-tag.outputs.tag }}
           secure_boot_key_url: 'https://github.com/ublue-os/akmods/raw/main/certs/public_key.der'
@@ -150,7 +150,7 @@ jobs:
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v4.3.1
         with:
-              name: bluefin-opinionated-preview
+              name: Crow-OS
               path: /home/runner/work/Crow-OS/Crow-OS/upload/
               if-no-files-found: error
               retention-days: 60
