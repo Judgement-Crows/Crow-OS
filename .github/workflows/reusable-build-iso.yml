@@ -27,9 +27,9 @@ jobs:
         image_flavor:
           - main
         base_name:
-          - ${{ inputs.brand_name }}-dx
+          - crow-os
         fedora_version:
-          - ${{ inputs.fedora_version }}
+          - 40
 
     steps:
       - name: Free Disk Space (Ubuntu)
