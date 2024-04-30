@@ -155,7 +155,7 @@ jobs:
         uses: actions/upload-artifact@v4.3.1
         with:
               name: bluefin-opinionated-preview
-              path: /home/runner/work/bluefin/bluefin/upload/
+              path: /home/runner/work/Crow-OS/Crow-OS/upload/
               if-no-files-found: error
               retention-days: 60
               compression-level: 0
