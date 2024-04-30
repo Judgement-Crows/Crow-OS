@@ -3,11 +3,11 @@ on:
   workflow_call:
     inputs:
       brand_name:
-        description: "bluefin-opinionated"
+        description: "Crow-OS"
         required: true
         type: string
       fedora_version:
-        description: 'opinionated-latest'
+        description: 'Crow-OS Latest'
         required: true
         type: string
 
