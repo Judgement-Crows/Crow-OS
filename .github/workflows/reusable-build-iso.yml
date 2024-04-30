@@ -93,7 +93,7 @@ jobs:
         shell: bash
         run: |
           set -ex
-          image="ghcr.io/ublue-os/blufin-dx:${{ steps.generate-tag.outputs.tag }}"
+          image="ghcr.io/ublue-os/bluefin-dx:${{ steps.generate-tag.outputs.tag }}"
           # Make temp space
           TEMP_FLATPAK_INSTALL_DIR=$(mktemp -d -p ${{ github.workspace }} flatpak.XXX)
           # Get list of refs from directory
