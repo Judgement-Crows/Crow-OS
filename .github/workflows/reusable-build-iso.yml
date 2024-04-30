@@ -160,3 +160,15 @@ jobs:
               retention-days: 60
               compression-level: 0
               overwrite: false
+      
+      - name: Create a Github Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ steps.upload-directory.outputs.iso-upload-dir }}/*
+          tag_name: ${{ steps.generate-tag.outputs.tag }}
+          title: ${{ steps.generate-tag.outputs.tag }}
+          body: ${{ steps.generate-tag.outputs.tag }}
+          draft: false
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
