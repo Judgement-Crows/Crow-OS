@@ -1,4 +1,4 @@
-name: Bluefin Latest ISO Build
+name: Crow-OS ISO Build
 on:
   workflow_dispatch:
 
@@ -8,5 +8,5 @@ jobs:
     uses: ./.github/workflows/reusable-build-iso.yml
     secrets: inherit
     with:
-      brand_name: Crow-OS
+      brand_name: crow-os
       fedora_version: 40
