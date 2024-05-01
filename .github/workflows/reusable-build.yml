@@ -250,8 +250,8 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Sign container
-      - uses: sigstore/cosign-installer@v3.5.0
-        if: github.event_name != 'pull_request'
+#      - uses: sigstore/cosign-installer@v3.5.0
+#        if: github.event_name != 'pull_request'
 
       - name: Sign container image
         if: github.event_name != 'pull_request'
@@ -278,7 +278,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: image-${{ env.IMAGE_NAME }}-${{ matrix.image_flavor }}-${{ matrix.fedora_version }}
-          retention-days: 1
+          retention-days: 14
           if-no-files-found: error
           path: |
             ${{ env.IMAGE_NAME }}-${{ matrix.image_flavor }}-${{ matrix.fedora_version }}.txt
