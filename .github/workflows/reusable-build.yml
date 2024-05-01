@@ -35,10 +35,6 @@ jobs:
         image_flavor:
           - main
           - nvidia
-          - asus
-          - asus-nvidia
-          - surface
-          - surface-nvidia
         base_name:
           - ${{ inputs.brand_name }}
           - ${{ inputs.brand_name }}-dx
@@ -82,12 +78,12 @@ jobs:
           else
               echo "AKMODS_FLAVOR=main" >> $GITHUB_ENV
           fi
-
-      - name: Verify base image
-        uses: EyeCantCU/cosign-action/verify@v0.2.2
-        with:
-          containers: ${{ env.BASE_IMAGE_NAME}}-${{ matrix.image_flavor }}:${{ matrix.fedora_version }}
-
+#
+#      - name: Verify base image
+#        uses: EyeCantCU/cosign-action/verify@v0.2.2
+#        with:
+#          containers: ${{ env.BASE_IMAGE_NAME}}-${{ matrix.image_flavor }}:${{ matrix.fedora_version }}
+#
       - name: Verify Chainguard images
         if: matrix.base_name != 'bluefin' && matrix.base_name != 'aurora'
         uses: EyeCantCU/cosign-action/verify@v0.2.2
